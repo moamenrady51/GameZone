@@ -1,0 +1,99 @@
+-console.log(user + "hi")
+doctype
+html 
+    head
+        title #{game.name} 
+        link(rel='shortcut icon' href='../img/logo5.png')
+        link(rel="stylesheet" href="../css/gameDetails.css")
+        link(rel="stylesheet" href="../css/all.min.css")
+        link(rel="stylesheet" href="../css/render.css")
+        style.
+            body{
+                background-image: url('/img/games/#{game.imageCover}.png');
+                background-repeat: no-repeat;
+                background-size: cover;
+                position: relative;
+            }
+    body
+        header.header
+            <a href="/"> <img src="../img/logo5.png" alt="" class="logo"> </a>
+           
+            if user
+                ul
+                    <li><a href="logout" class='logout'>logOut</a></li>
+                    <li><a href="/profile">#{user.name}</a>
+                    <img src="../img/userIcon.png" alt="" class="user-image">
+                    </li>
+            else 
+                ul
+                    <li><a href="/login">Login</a></li>
+                    <li><a href="/login">SignUp</a></li>
+                    <li><a href="/login">Profile</a>
+                    <img src="../img/userIcon.png" alt="" class="user-image">
+                    </li>
+
+        section.section
+            <h1>#{game.name}</h1>
+            .upperframe
+                .details
+                    <h4>Price         : #{game.price} $</h4>
+                    <h4>category : #{game.category} </h4>
+                    <h4>downloads : #{game.downloads}     times</h4>
+                    <h4>active players : #{game.activePlayers}   playes</h4>
+                    button Buy now
+                .image
+                   img(src=`/img/games/${game.imageCover}.png` alt='')
+            .review 
+                label(for="review") Add a review
+                .box
+                    input#review(type="text", name="review", placeholder="what do you think about this game", required)
+                    button.addReviewButton Add
+        .reviews
+            h2 Game reviews
+            each review in reviews
+                .user
+                    img(src=`/img/users/${review.user.photo}` alt='')
+                    p #{review.user.name}
+                .parag
+                    p #{review.review}
+//- <!DOCTYPE html>
+//- <html lang="en">
+//- <head>
+//-     <meta charset="UTF-8">
+//-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+//-     <link rel="shortcut icon" href="images/favicon.jpg">
+//-     <link rel="stylesheet" href="css/all.min.css">
+//-     <link rel="stylesheet" href="css/render.css">
+//-     <title>Game name</title>
+//- </head>
+//- <body>
+//-     <header class="header">
+//-         <img src="images/logo5.png" alt="" class="logo">
+//-         <ul>
+    <link rel="stylesheet" href="css/gameDetails.css">
+//-             <li><a href="#login">Login</a></li>
+//-             <li><a href="#login">SignUp</a></li>
+//-             <li><a href="#login">Profile</a>
+//-             <img src="images/userIcon.png" alt="" class="user-image">
+//-             </li>
+//-         </ul>
+//-     </header>
+//-     <section class="section">
+//-         <h1>Game name </h1>
+//-         <div class="upperframe">
+
+//-             <div class="details">
+//-                 <h4>company         : Activation</h4>
+//-                 <h4>category : Fight </h4>
+//-                 <h4>downloads : 120 Million</h4>
+//-                 <h4>active players : 29 Million</h4>
+//-             </div>
+
+//-             <div class="image">
+//-                 <img src="./images/black-ops.png" alt="">
+//-             </div>
+//-         </div>
+        
+//-     </section>
+//- </body>
+//- </html>

@@ -1,0 +1,248 @@
+html, body {
+    height: 100%; /* Ensure the html and body elements take up the full height of the viewport */
+    margin: 0; /* Remove default margins */
+    padding: 0; /* Remove default padding */
+}
+
+body {
+    display: flex; /* Optional: Use flexbox to make content fill the height */
+    flex-direction: column;
+    max-height: 100vh; /* Make sure the body takes at least the full height of the viewport */
+}
+body{
+    background-image: url(./../images/back.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+.container{
+    width: 90%;
+    margin: auto;
+    height: 100%;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    background-color: #444444;
+
+    align-items: center;
+    position: relative;
+    top: 20px;
+    width: 100%;
+    margin: auto;
+}
+
+.header .logo{
+    height: 70px;
+    margin-left: 30px;
+    color: white;
+    background-color: transparent;
+}
+.header ul{
+    margin-right: 30px;
+
+    display: flex;
+    list-style: none;
+    align-items: center;
+
+}
+.header ul li{
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+}
+.header ul li a{
+    text-decoration: none;
+    color: white;
+    padding: 2px;
+}
+
+.header ul li .user-image{
+    width: 15px;
+    background-color: aliceblue;
+    border-radius: 50%;
+
+}
+
+.section{
+    width: 100%;
+    background-color: #c9c9c9;
+    height: 90%;
+    /* margin-top: -10px;
+    padding-top: 60px;
+    padding-bottom: 60px; */
+}
+.section-box{
+    border-radius: 4px;
+    width: 80%;
+    overflow: hidden;
+    /* margin-top: 40px; */
+    height: 80%;
+    margin: auto;
+    transform: translateY(13%);
+    /* padding-top: 100px;
+    padding-bottom: 100px; */
+    background-color: #444444;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* display: grid;
+    grid-template-columns: 1.5fr 2fr;
+    grid-gap: 10px; */
+}
+
+.section-box .image{
+    height: 100%;
+    display: flex;
+    flex-basis: 30%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-top: auto;
+    transform: translateY(5%);
+
+    border-radius: 50px;
+}
+.section-box .image img{
+
+    width: 250px;
+    height: 250px;
+    border-radius: 30px;
+}
+.settings{
+    flex-basis: 7%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(238, 255, 7 ,0.7);
+
+}
+.section-box .info{
+    height: 70%;
+    flex-basis: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+.section-box .info div{
+    display: flex;
+    width: 80%;
+    padding-left: 20px;
+    
+    
+}
+.section-box .info .div > h4{
+    flex-basis: 25%;
+    color: rgb(151, 187, 20);
+    font-weight: bold;
+}
+.section-box .info div .box{
+    flex-basis: 75%;
+    margin-top: 16px;
+    height: 30px;
+    align-items: center;
+    padding-left: 50px;
+    width: 100%;
+    border-radius: 8px;
+    background-color: aliceblue;
+}
+
+
+.submit{
+    width: 100%;
+    margin-top: 50px;
+    height: 60%;
+    border-radius: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: rgb(238, 255, 7 ,0.7);
+}
+
+/* 
+
+.form{
+    display: none;
+    height: 70%;
+    flex-basis: 60%;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+.form div{
+    display: flex;
+    width: 80%;
+    padding-left: 20px;
+    
+    
+}
+.form .div > h4{
+    flex-basis: 25%;
+    color: rgb(151, 187, 20);
+    font-weight: bold;
+}
+.form div .box{
+    flex-basis: 75%;
+    margin-top: 16px;
+    height: 30px;
+    align-items: center;
+    padding-left: 50px;
+    width: 100%;
+    border-radius: 8px;
+    background-color: aliceblue;
+} */
+
+
+.form {
+    display: none; /* Change to flex to allow column direction */
+    height: auto; /* Allow height to adjust based on content */
+    flex-basis: 60%;
+    flex-direction: column; /* Maintain column layout */
+    justify-content: center; /* Center content vertically */
+    gap: 10px; /* Space between form elements */
+    padding: 20px; /* Add padding for better spacing */
+    background-color: #444444; /* Set a background color for the form */
+    border-radius: 10px; /* Rounded corners for the form */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+    color: #fff; /* Set text color to white for contrast */
+}
+
+.form div {
+    display: flex;
+    width: 100%; /* Make full width */
+    padding: 10px 0; /* Space above and below each label/input */
+}
+
+.form label {
+    flex-basis: 30%; /* Adjust width for labels */
+    color: rgb(151, 187, 20); /* Keep label color */
+    font-weight: bold; /* Bold labels */
+}
+
+.form input {
+    flex-basis: 70%; /* Adjust width for inputs */
+    height: 30px; /* Maintain consistent height */
+    padding-left: 10px; /* Space within inputs */
+    border-radius: 8px; /* Rounded corners for inputs */
+    border: 2px solid rgb(151, 187, 20); /* Border color to match labels */
+    background-color: aliceblue; /* Input background color */
+}
+
+.form button.updateData {
+    width: 30%; /* Set button width */
+    height: 40px; /* Increase button height for better usability */
+    border: none; /* Remove default border */
+    border-radius: 15px; /* Rounded button corners */
+    background-color: rgb(151, 187, 20); /* Button background color */
+    color: white; /* Button text color */
+    font-weight: bold; /* Bold text for button */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Transition for hover effect */
+}
+
+.form button.updateData:hover {
+    background-color: rgba(151, 187, 20, 0.8); /* Darker shade on hover */
+}

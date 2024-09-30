@@ -1,0 +1,168 @@
+doctype
+html
+    head
+        title Game Zone
+        link(rel="shortcut icon" href="img/logo5.png")
+        link(rel="stylesheet" href="css/profile.css")
+        link(rel="stylesheet" href="css/all.min.css")
+        link(rel="stylesheet" href="css/render.css")
+    body
+        .container
+            header.header
+                <a href="/"> <img src="img/logo5.png" alt="" class="logo"></a>
+                ul
+                    <li><a href="logout" class='logout'>logOut</a></li>
+                    <li><a href="profile">#{user.name}</a>
+                    <img src="../img/userIcon.png" alt="" class="user-image">
+                    </li>
+            section.section 
+                .section-box
+                    .settings
+                        <i class="fas fa-angle-left change-background fa-2x"></i>
+                        <i class="fas fa-angle-double-down fa-3x"></i>
+                        <i class="fas fa-angle-double-down fa-3x"></i>
+                        <i class="fas fa-angle-double-down fa-3x"></i>
+
+                    .image
+                        img(src= `img/users/${user.photo}` alt="" class="logo")
+                        h4 #{user.name}
+                    .info
+                        <div class="div">
+                            <h4>username </h4>
+                            <div class="box">
+                                <h4>#{user.name}</h4>
+                            </div>
+
+                        </div>
+                        <div class="div">
+                            <h4>email </h4>
+                            <div class="box">
+                                <h4>#{user.email}</h4>
+                            </div>
+                            
+                        </div>
+                        <div class="div">
+                            <h4>age </h4>
+                            <div class="box">
+                                <h4>#{user.age}</h4>
+                            </div>
+                            
+                        </div>
+                        <div class="div">
+                            <h4>country </h4>
+                            <div class="box">
+                                <h4>#{user.country}</h4>
+                            </div>
+                        </div>
+                        <div>
+                            <button class="submit" >change settings </button>
+                        </div>
+                    //- form.form(action="/submit-data" , method='POST')
+                    form.form
+                        
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required><br><br>
+
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required><br><br>
+                        <label for="country">country:</label>
+                        <input type="country" id="country" name="country" required><br><br>
+                        <label for="age">age:</label>
+                        <input type="age" id="age" name="age" required><br><br>
+
+                        <button type="submit" class='updateData'>Submit</button>
+                        //- <div class="div">
+                        //- <h4>username </h4>
+                        //- <div class="box">
+                        //-     input(type="text" , required , placeholder="type your name ")
+                        //- </div>
+
+                        //- </div>
+                        //- <div class="div">
+                        //-     <h4>email </h4>
+                        //-     <div class="box">
+                        //-         input(type="text" , required , placeholder="type your email ")
+                        //-     </div>
+                            
+                        //- </div>
+                        //- <div class="div">
+                        //-     <h4>age </h4>
+                        //-     <div class="box">
+                        //-         input(type="text" , required , placeholder="type your age ")
+                        //-     </div>
+                            
+                        //- </div>
+                        //- <div class="div">
+                        //-     <h4>country </h4>
+                        //-     <div class="box">
+                        //-         input(type="text" , required , placeholder="type your country ")
+                        //-     </div>
+                        //- </div>
+                        //- <div>
+                        //-     <button type='submit' class="submit" >save settings </button>
+                        //- </div>
+
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.7/axios.min.js')
+        script(src='/js/index.js')
+        script(src='/js/updateSettings.js')
+
+//-             <!DOCTYPE html>
+//- <html lang="en">
+//- <head>
+//-     <meta charset="UTF-8">
+//-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+//-     <link rel="shortcut icon" href="images/favicon.jpg">
+//-     <link rel="stylesheet" href="css/profile.css">
+//-     <link rel="stylesheet" href="css/all.min.css">
+//-     <link rel="stylesheet" href="css/render.css">
+//-     <title>Username</title>
+//- </head>
+//- <body>
+//-     <header class="header">
+//-         <img src="images/logo5.png" alt="" class="logo">
+//-         <ul>
+//-             <li><a href="#logout">logOut</a></li>
+//-             <li><a href="#profile">#{user.name}</a>
+//-             <img src="images/userIcon.png" alt="" class="user-image">
+//-             </li>
+//-         </ul>
+//-     </header>
+//-     <section class="section">
+//-         <div class="image">
+//-             <img src="images/moamen.jpg" alt="">
+//-             <h4>username</h4>
+//-         </div>
+//-         <div class="info">
+//-             <div class="div">
+//-                 <h4>username </h4>
+//-                 <div class="box">
+//-                     <h4> {name}</h4>
+//-                 </div>
+
+//-             </div>
+//-             <div class="div">
+//-                 <h4>email </h4>
+//-                 <div class="box">
+//-                     <h4> {email}</h4>
+//-                 </div>
+                
+//-             </div>
+//-             <div class="div">
+//-                 <h4>age </h4>
+//-                 <div class="box">
+//-                     <h4> {age}</h4>
+//-                 </div>
+                
+//-             </div>
+//-             <div class="div">
+//-                 <h4>country </h4>
+//-                 <div class="box">
+//-                     <h4> {country}</h4>
+//-                 </div>
+//-             </div>
+//-         </div>
+//-     </section>
+//- </body>
+//- </html>
+
+            

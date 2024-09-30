@@ -1,0 +1,54 @@
+doctype
+html
+    head
+        title Game Zone
+        link(rel="shortcut icon" href="img/logo5.png")
+        link(rel="stylesheet" href="css/overview.css")
+        link(rel="stylesheet" href="css/all.min.css")
+        
+        link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css")
+        link(rel="stylesheet" href="css/render.css")
+    body
+        .container
+            header.header
+                img(src="img/logo5.png" alt="" class="logo")
+
+                if user
+                    ul
+                        <li><a href="logout" class='logout'>logOut</a></li>
+                        <li><a href="profile">#{user.name}</a>
+                        <img src="../img/userIcon.png" alt="" class="user-image">
+                        </li>
+                else 
+                    ul
+                        <li><a href="login">Login</a></li>
+                        <li><a href="signup">SignUp</a></li>
+                        <li><a href="#login">Profile</a>
+                        <img src="../img/userIcon.png" alt="" class="user-image">
+                        </li>
+            section.section
+                .cards
+                    each game in games
+                    
+                        .card
+                            .imagebox
+                                img(src=`/img/games/${game.imageCover}.png` alt='')
+                                h2  #{game.name}
+                        
+                            .description
+                                p #{game.description}
+                            .databox
+                                p #{game.downloads} downloads 
+                                p 545 MB
+                                <p class="formattedDate"> #{game.releaseDate} </p>
+                                p #{game.category} 
+                                
+                            .detailsbox
+                                //- <a href="#gameDetails"> details </a>
+                                h4 #{game.price} $
+
+                                a(href=`/gameDetails/${game._id}`) details
+                                a(href=`/`) Buy
+
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.7/axios.min.js')
+        script(src='/js/index.js')

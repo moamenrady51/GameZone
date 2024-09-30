@@ -1,0 +1,191 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Signup Page
+    style.
+      body {
+      font-family: Arial, sans-serif;
+      background-color: #444444;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      }
+      
+      .signup-container {
+      background-color: #333;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+      width: 500px;
+      }
+      
+      h2 {
+      text-align: center;
+      color: rgb(238, 255, 7);
+      }
+      
+      label {
+      display: block;
+      margin-top: 10px;
+      font-size: 16px;
+      }
+      
+      input[type="text"],
+      input[type="email"],
+      input[type="password"],
+      input[type="number"] {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      margin-bottom: 15px;
+      border: none;
+      border-radius: 5px;
+      background-color: #555;
+      color: white;
+      }
+      select{
+      width: 105%;
+      padding: 10px;
+      margin-top: 5px;
+      margin-bottom: 15px;
+      border: none;
+      border-radius: 5px;
+      background-color: #555;
+      color: white;
+      }
+      input::placeholder, select {
+      color: #bbb;
+      }
+      
+      button {
+      width: 80%;
+      padding: 10px;
+      border: none;
+      margin-left: 55px;
+      margin-top: 15px;
+      border-radius: 5px;
+      background-color: rgb(238, 255, 7);
+      color: #444444;
+      font-size: 16px;
+      cursor: pointer;
+      }
+      
+      button:hover {
+      background-color: rgb(200, 230, 7);
+      }
+  body
+    .signup-container
+      h2 Signup
+      form(action="/submit-data", method="POST")
+        label(for="name") Name
+        input#name(type="text", name="name", placeholder="Enter your name", required)
+        label(for="email") Email
+        input#email(type="email", name="email", placeholder="Enter your email", required)
+        label(for="password") Password
+        input#password(type="password", name="password", placeholder="Enter your password", required)
+        label(for="passwordConfirm") Confirm Password
+        input#passwordConfirm(type="password", name="passwordConfirm", placeholder="Confirm your password", required)
+        label(for="country") Country
+        select#country(name="country", required)
+          option(value="Select your country") Select your country
+          option(value="Afghanistan") Afghanistan
+          option(value="Albania") Albania
+          option(value="Algeria") Algeria
+          option(value="Andorra") Andorra
+          option(value="Angola") Angola
+          option(value="Argentina") Argentina
+          option(value="Armenia") Armenia
+          option(value="Australia") Australia
+          option(value="Austria") Austria
+          option(value="Azerbaijan") Azerbaijan
+          option(value="Bahamas") Bahamas
+          option(value="Bahrain") Bahrain
+          option(value="Bangladesh") Bangladesh
+          option(value="Barbados") Barbados
+          option(value="Belarus") Belarus
+          option(value="Belgium") Belgium
+          option(value="Belize") Belize
+          option(value="Benin") Benin
+          option(value="Bhutan") Bhutan
+          option(value="Bolivia") Bolivia
+          option(value="Bosnia and Herzegovina") Bosnia and Herzegovina
+          option(value="Botswana") Botswana
+          option(value="Brazil") Brazil
+          option(value="Bulgaria") Bulgaria
+          option(value="Burkina Faso") Burkina Faso
+          option(value="Burundi") Burundi
+          option(value="Cambodia") Cambodia
+          option(value="Cameroon") Cameroon
+          option(value="Canada") Canada
+          option(value="Chad") Chad
+          option(value="Chile") Chile
+          option(value="China") China
+          option(value="Colombia") Colombia
+          option(value="Congo") Congo
+          option(value="Costa Rica") Costa Rica
+          option(value="Croatia") Croatia
+          option(value="Cuba") Cuba
+          option(value="Cyprus") Cyprus
+          option(value="Czech Republic") Czech Republic
+          option(value="Denmark") Denmark
+          option(value="Djibouti") Djibouti
+          option(value="Dominican Republic") Dominican Republic
+          option(value="Ecuador") Ecuador
+          option(value="Egypt") Egypt
+          option(value="El Salvador") El Salvador
+          option(value="Estonia") Estonia
+          option(value="Ethiopia") Ethiopia
+          option(value="Finland") Finland
+          option(value="France") France
+          option(value="Georgia") Georgia
+          option(value="Germany") Germany
+          option(value="Greece") Greece
+          option(value="Guatemala") Guatemala
+          option(value="India") India
+          option(value="Indonesia") Indonesia
+          option(value="Iraq") Iraq
+          option(value="Ireland") Ireland
+          option(value="Israel") Israel
+          option(value="Italy") Italy
+          option(value="Japan") Japan
+          option(value="Jordan") Jordan
+          option(value="Kenya") Kenya
+          option(value="Kuwait") Kuwait
+          option(value="Latvia") Latvia
+          option(value="Lebanon") Lebanon
+          option(value="Malaysia") Malaysia
+          option(value="Mexico") Mexico
+          option(value="Morocco") Morocco
+          option(value="Nepal") Nepal
+          option(value="Netherlands") Netherlands
+          option(value="New Zealand") New Zealand
+          option(value="Nigeria") Nigeria
+          option(value="Norway") Norway
+          option(value="Pakistan") Pakistan
+          option(value="Peru") Peru
+          option(value="Philippines") Philippines
+          option(value="Poland") Poland
+          option(value="Portugal") Portugal
+          option(value="Qatar") Qatar
+          option(value="Russia") Russia
+          option(value="Saudi Arabia") Saudi Arabia
+          option(value="South Africa") South Africa
+          option(value="Spain") Spain
+          option(value="Sweden") Sweden
+          option(value="Switzerland") Switzerland
+          option(value="Thailand") Thailand
+          option(value="Turkey") Turkey
+          option(value="United Arab Emirates") United Arab Emirates
+          option(value="United Kingdom") United Kingdom
+          option(value="United States") United States
+          option(value="Vietnam") Vietnam
+        label(for="age") Age
+        input#age(type="number", name="age", placeholder="Enter your age", required)
+        button(type="submit") Sign Up
+
+
