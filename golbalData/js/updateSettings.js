@@ -24,7 +24,6 @@
 
 document.querySelector(".updateData").addEventListener("click" , e=> {
   e.preventDefault();
-  console.log("hi")
   const email = document.getElementById("email").value;
   const name = document.getElementById("name").value;
   const age = document.getElementById("age").value;

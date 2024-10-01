@@ -7,7 +7,7 @@ const reviewRouter = require('./routes/reviewRoutes');
 const viewRouter = require('./routes/viewRoutes');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
-
+const compression = require('compression');
 
 const app = express();
 app.use(express.json());
@@ -24,6 +24,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
+
+app.use(compression())
 app.use('/', viewRouter);
 app.use('/Game_api/v1/Users', userRouter);
 app.use('/Game_api/v1/Reviews', reviewRouter);
