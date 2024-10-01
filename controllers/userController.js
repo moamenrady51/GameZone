@@ -15,9 +15,6 @@ exports.deleteOneUser = mainController.deleteOne(User);
 
 
 exports.createUser = async (re) =>{
-    console.log("hi")
     const newDocument = await User.create(re);
-    console.log(newDocument)
-
 
 }

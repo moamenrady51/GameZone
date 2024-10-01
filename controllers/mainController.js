@@ -3,9 +3,7 @@ const AppError = require('./../utils/appError')
 
 
 exports.createOne = Model => catchAsyncErrors(async (req, res , next ) =>{
-    console.log("hi")
     const newDocument = await Model.create(req.body);
-    console.log("hi")
 
     res
     .status(200)
@@ -51,7 +49,6 @@ exports.updateOne = Model => (req, res , next ) =>{
 
 
 exports.deleteOne = Model => catchAsyncErrors(async (req, res , next ) =>{
-    console.log(req.params.id);
     const doc = await Model.findByIdAndDelete(req.params.id);
 
     if (!doc) {

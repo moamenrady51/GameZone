@@ -60,14 +60,11 @@ exports.login = catchAsyncErrors(async (req, res, next) => {
 
 
 exports.isLoggedIn = async (req , res , next ) =>{
-    console.log("from isloggedin function ")
     let token;
-    console.log(req.cookies.jwt)
     try{
     
         //check if token exists
         if (req.cookies.jwt) {
-            console.log("jwt is catched ");
             token = req.cookies.jwt;
         }else if (
             req.headers.authorization &&
@@ -81,7 +78,6 @@ exports.isLoggedIn = async (req , res , next ) =>{
         if(token){
             const decoded = await promisify(jwt.verify)(token , process.env.JWT_SECRET_KEY);
             const currentUser = await User.findById(decoded.id.id);
-            console.log(currentUser);
             res.locals.user = currentUser;
             req.user  = currentUser;
         }
@@ -96,7 +92,6 @@ exports.isLoggedIn = async (req , res , next ) =>{
 
 
 exports.logout = (req , res ) =>{
-    console.log("trying to logout")
     res.cookie('jwt' , 'loggedout' , {
         expires: new Date( Date.now() + 10 * 1000),
         httpOnly: true
@@ -108,10 +103,7 @@ exports.logout = (req , res ) =>{
 
 
 exports.forgotPassword = catchAsyncErrors(async (req , res , next ) =>{
-    console.log("hi");
-    console.log(req.body.email);
     const user = await User.findOne({email : `${req.body.email}`});
-    // console.log(user);
     if(!user){
         return next(new AppError('email is invalid ' , 400));
     }
@@ -134,11 +126,9 @@ exports.forgotPassword = catchAsyncErrors(async (req , res , next ) =>{
 
 exports.resetPassword = catchAsyncErrors(async (req , res , next ) =>{
 
-    console.log("hi")
     const hashedToken = crypto.createHash('sha256').update(req.params.token).digest('hex');
     
     const user = await User.findOne({passwordResetToken:hashedToken});
-    console.log(user)
     // if token has not expired and there is a user , set the new password 
     if(!user){
         next(new AppError("token is invalid " , 400));
